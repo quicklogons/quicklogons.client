@@ -1,0 +1,99 @@
+﻿@using Sample.NancyFx.Website.Core
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Sample.NancyFx.Website.Models.TitleModel>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuickLogons Client / NancyFx Sample@(string.IsNullOrWhiteSpace(Model.Title) ? string.Empty : string.Format(" / {0}", Model.Title))</title>
+
+    <link href="~/content/bootstrap-3.1.0/css/bootstrap.min.css?version=@this.GetVersion()" rel="stylesheet">
+    <link href="~/content/styles.css?version=@this.GetVersion()" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="~/content/bootstrap-3.1.0/js/html5shiv.js?version=@this.GetVersion()"></script>
+      <script src="~/content/bootstrap-3.1.0/js/respond.min.js?version=@this.GetVersion()"></script>
+    <![endif]-->
+</head>
+<body>
+    <main class="container">
+        <header>
+        @if (RenderContext.Context.CurrentUser != null)
+        {
+            <p class="">
+                <br />
+                <span class="glyphicon glyphicon-user"></span>
+                <strong><a rel="nofollow" href="@Url.Content("/Profile")">@(RenderContext.Context.CurrentUser.UserName)</a></strong>&nbsp;
+                <a rel="nofollow" href="@Url.Content("/Logout?ReturnUrl=" + this.CreateReturnUrl(RenderContext))">Logout</a>
+            </p>
+        }
+            <div class="">
+                <a class="" href="@this.Url.Content("/")"><h1>QuickLogons Client - NancyFx Sample</h1></a>
+            </div>
+        </header>
+
+        @if (IsSectionDefined("BeforeMain"))
+        {
+            <div class="row">
+                <section class="col-md-12 before-main">
+                    @RenderSection("BeforeMain")
+                </section>
+            </div>
+        }
+
+        @{ var sections = this.CalculateLayout("LeftAside", "Content", "RightAside"); }
+        <section class="row">
+            @if (sections[0] != null)
+            {
+                <aside class="@sections[0] aside-left">
+                    @RenderSection("LeftAside")
+                </aside>
+            }
+            <div class="@sections[1] wrap-content">
+                @if (IsSectionDefined("BeforeContent"))
+                {
+                    <section class="before-content">
+                        @RenderSection("BeforeContent")
+                    </section>
+                }
+                <article class="content">
+                    @RenderBody()
+                </article>
+                @if (IsSectionDefined("AfterContent"))
+                {
+                    <section class="after-content">
+                        @RenderSection("AfterContent")
+                    </section>
+                }
+            </div>
+            @if (sections[2] != null)
+            {
+                <aside class="@sections[2] aside-right">
+                    @RenderSection("RightAside")
+                </aside>
+            }
+        </section>
+
+        @if (IsSectionDefined("AfterMain"))
+        {
+            <section class="after-main">
+                @RenderSection("AfterMain")
+            </section>
+        }
+    </main>
+    <footer class="container">
+        <div>
+            <div class="text-muted pull-left">
+                © QuickLogons 2014&nbsp;
+            </div>
+            <div class="text-muted pull-right">Powered by <a target="_blank" href="http://nancyfx.org/">NanacyFX</a> &amp; <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a></div>
+        </div>
+    </footer>
+    <script src="~/content/jquery/jquery-2.0.3.min.js?version=@this.GetVersion()"></script>
+    <script src="~/content/bootstrap-3.1.0/js/bootstrap.min.js?version=@this.GetVersion()"></script>
+    <script src="~/content/scripts.js?version=@this.GetVersion()"></script>
+    @if (IsSectionDefined("Scripts"))
+    { @RenderSection("Scripts") }
+</body>
+</html>
+

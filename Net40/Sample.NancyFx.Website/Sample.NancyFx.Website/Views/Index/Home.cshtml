@@ -1,0 +1,17 @@
+﻿@using Sample.NancyFx.Website.Core
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Sample.NancyFx.Website.Models.Index.IndexHomeModel>
+@{ Layout = Model.Layout; }
+
+<div class="row">
+    <p><br /></p>
+    <div class="col-sm-4 text-center">
+        <a class="btn btn-lg btn-primary" href="@Model.LoginPageUrl">Quicklogons Login page</a><br /><br />
+    </div>
+    <div class="col-sm-4 text-center">
+        <a class="btn btn-lg btn-danger" href="/login">Custom Login page</a><br /><br />
+    </div>
+    <div class="col-sm-4 text-center">
+        <a class="btn btn-lg btn-info" href="/profile">Profile</a><br /><br />
+    </div>
+    <p><br /><br /><br /><br /><br /></p>
+</div>

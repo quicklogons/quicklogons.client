@@ -1,0 +1,9 @@
+﻿@using Sample.NancyFx.Website.Core
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Sample.NancyFx.Website.Models.ErrorModel>
+@{ Layout = Model.Layout; }
+
+<h2 class="page-header">@Model.Title</h2>
+
+<p class="text-danger">
+    @Model.Message
+</p>

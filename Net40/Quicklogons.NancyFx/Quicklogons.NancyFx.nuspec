@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/quicklogons/quicklogons.client/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://www.quicklogons.com/</projectUrl>
+    <iconUrl>http://www.quicklogons.com/content/images/logo32x32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright © Quicklogons 2014</copyright>
+    <tags>.Net40 OAuth1.0 OAuth2.0 SocialLogin Quicklogons NancyFx</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="net40" />
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework="net40" />
+    </frameworkAssemblies>
+    <dependencies>
+      <dependency id="Nancy" version="0.22.2"/>
+      <dependency id="Nancy.Authentication.Forms" version="0.22.2"/>
+      <dependency id="Quicklogons.Client" version="1.0.0.0"/>
+    </dependencies>
+  </metadata>
+</package>

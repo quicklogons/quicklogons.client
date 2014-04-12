@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Quicklogons.Client.NancyFx")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Quicklogons.NancyFx")]
+[assembly: AssemblyDescription("This is helpers library for NancyFx powered web-sites that use Quicklogons.Client")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Quicklogons.Client.NancyFx")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Quicklogons")]
+[assembly: AssemblyProduct("Quicklogons.NancyFx")]
+[assembly: AssemblyCopyright("Copyright © Quicklogons 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

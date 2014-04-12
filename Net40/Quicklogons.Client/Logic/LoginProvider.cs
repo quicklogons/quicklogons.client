@@ -29,7 +29,7 @@ namespace Quicklogons.Client.Logic
             var settings = _settingProvider.GetSettings();
             var relativeUrl = string.Format(RelativeRequestUrl, settings.SiteKey) + (!string.IsNullOrWhiteSpace(returnUrl) ? string.Format(ReturnUrlQuery, HttpUtility.UrlEncode(returnUrl)) : string.Empty);
             var requestUrl = new Uri(new Uri(settings.SecureUrl), relativeUrl);
-            var rq = WebRequest.CreateHttp(requestUrl);
+            var rq = WebRequest.Create(requestUrl);
             rq.Method = "GET";
             var rs = rq.GetResponse();
             using (var stream = rs.GetResponseStream())

@@ -1,0 +1,16 @@
+﻿@model Quicklogons.Models.UserProfilePart
+@{ var userPart = Model.ContentItem.Get(typeof(Orchard.Users.Models.UserPart)) as Orchard.Users.Models.UserPart; }
+<div>
+    @Html.LabelFor(m => userPart.UserName, T("User Name"))
+    @Html.TextBoxFor(m => userPart.UserName, new { @class = "text medium", @readonly = "readonly" })
+</div>
+<div>
+    @Html.LabelFor(m => userPart.Email, T("Email"))
+    @Html.TextBoxFor(m => userPart.Email, new { @class = "text medium" })
+    @Html.ValidationMessageFor(m => userPart.Email, "*")
+</div>
+<div>
+    @Html.LabelFor(m => m.Name, T("Display Name"))
+    @Html.TextBoxFor(m => m.Name, new { @class = "text medium" })
+    @Html.ValidationMessageFor(m => m.Name, "*")
+</div>

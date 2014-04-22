@@ -1,0 +1,21 @@
+﻿ul.ql-logon-links {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+ul.ql-logon-links li {
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
+
+div.ql-logon-with {
+    width: 50%;
+    position:relative;
+    float: left;
+}
+div.ql-default-logon {
+    width: 49%;
+    position: relative;
+    float:right;
+}

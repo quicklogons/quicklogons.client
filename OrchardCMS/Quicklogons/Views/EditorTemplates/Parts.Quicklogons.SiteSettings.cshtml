@@ -1,0 +1,37 @@
+﻿@model Quicklogons.Models.QuicklogonsSettingsPart
+@using Orchard.Utility.Extensions;
+@{
+    var baseUri = new Uri(WorkContext.CurrentSite.BaseUrl);
+    var callbackUrl = new Uri(baseUri, Url.Action("LoggedIn", "Landing", new { area = "Quicklogons", provider = "{provider}", userid = "{userid}", name = "{name}", email = "{email}", timestamp = "{timestamp}", hash = "{hash}", error = "{error}", returnurl = "{returnurl}" })).ToString();
+    var hashAlgorithms = new[] { "HMACSHA1", "HMACMD5", "HMACRIPEMD160", "HMACSHA256", "HMACSHA384", "HMACSHA512" }.Select(x => new SelectListItem { Text = x, Value = x, Selected = string.Equals(x, Model.HashAlgorithm, StringComparison.OrdinalIgnoreCase) });
+}
+<fieldset>
+    <legend>@T("Quicklogons Settings")</legend>
+    <p>
+        First, please login to <a target="_blank" href="https://www.quicklogons.com/login/">www.quicklogons.com</a>.<br />
+        After, setup/configure your site on Qiucklogos, find more in <a target="_blank" href="http://www.quicklogons.com/en-us/GetStarted#configure">documentation</a>.<br />
+    </p>
+    <div>
+        <label for="@Html.FieldIdFor(m => m.SiteKey)">@T("Site key")</label>
+        @Html.TextBoxFor(m => m.SiteKey)
+        @Html.ValidationMessage("SiteKey", "*")
+        <span class="hint">@T("Your site key. Should be copied from Site settings")</span>
+    </div>
+    <div>
+        <label for="@Html.FieldIdFor(m => m.SiteSecret)">@T("Site secret")</label>
+        @Html.PasswordFor(m => m.SiteSecret)
+        @Html.ValidationMessage("SiteSecret", "*")
+        <span class="hint">@T("Your site secret. Leave empty to skip change. Should be copied from Site settings")</span>
+    </div>
+    <div>
+        <label for="@Html.FieldIdFor(m => m.HashAlgorithm)">@T("Hash algorithm")</label>
+        @Html.DropDownList("HashAlgorithm", hashAlgorithms)
+        @Html.ValidationMessage("HashAlgorithm", "*")
+        <span class="hint">@T("Your site hash algorithm. Should be same as Site settings")</span>
+    </div>
+    <div>
+        <label for="Quicklogons_CallbackUrl">@T("Callback url")</label>
+        @Html.TextArea("Quicklogons_CallbackUrl", callbackUrl, new { @readonly = "readonly" })
+        <span class="hint">@T("Your site callback url. Copy and paste to Site settings")</span>
+    </div>
+</fieldset>

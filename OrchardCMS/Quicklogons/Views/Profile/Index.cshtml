@@ -1,0 +1,8 @@
+﻿<h1>@Html.TitleForPage(T("Profile").Text)</h1>
+@Display(Model)
+<div>
+    @Html.ActionLink(T("Change Password").Text, "ChangePassword", "Account", new { Area = "Orchard.Users" }, null)
+</div>
+<div>
+    @Html.ActionLink(T("Edit Profile").Text, "Edit", "Profile", new { Area = "Quicklogons" }, null)
+</div>

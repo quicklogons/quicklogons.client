@@ -1,0 +1,5 @@
+<Placement>
+  <Place Parts_Quicklogons_SiteSettings="Content:1"/>
+  <Place Parts_UserProfileEdit="Content:1"/>
+  <Place Parts_UserProfile="Content:1.1"/>
+</Placement>

@@ -1,0 +1,20 @@
+﻿@{
+    var userProfilePart = Model.Model as Quicklogons.Models.UserProfilePart;
+    var userPart = Model.Model.ContentItem.Get(typeof(Orchard.Users.Models.UserPart)) as Orchard.Users.Models.UserPart;
+}
+<div>
+    @Html.Label(string.Empty, T("User Name").Text)
+    <span>@userPart.UserName</span>
+</div>
+<div>
+    @Html.Label(string.Empty, T("Email").Text)
+    <span>
+        @userPart.Email
+    </span>
+</div>
+<div>
+    @Html.Label(string.Empty, T("Display Name").Text)
+    <span>
+        @userProfilePart.Name
+    </span>
+</div>

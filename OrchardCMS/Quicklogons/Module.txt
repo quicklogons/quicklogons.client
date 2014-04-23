@@ -2,7 +2,7 @@
 AntiForgery: enabled
 Author: Maxim Postevoy
 Website: http://www.quicklogons.com/
-Version: 1.0
+Version: 1.0.0.0
 OrchardVersion: 1.7
 Category: Security
 Description: Easy login your users behalf of Quicklogons service with lots social networks, portals and etc.

@@ -1,8 +1,9 @@
 ﻿@model Quicklogons.Models.QuicklogonsSettingsPart
 @using Orchard.Utility.Extensions;
 @{
-    var baseUri = new Uri(WorkContext.CurrentSite.BaseUrl);
-    var callbackUrl = new Uri(baseUri, Url.Action("LoggedIn", "Landing", new { area = "Quicklogons", provider = "{provider}", userid = "{userid}", name = "{name}", email = "{email}", timestamp = "{timestamp}", hash = "{hash}", error = "{error}", returnurl = "{returnurl}" })).ToString();
+    
+    var baseUri = string.IsNullOrWhiteSpace(WorkContext.CurrentSite.BaseUrl) ? new Uri(WorkContext.HttpContext.Request.Url, WorkContext.HttpContext.Request.ApplicationPath) : new Uri(WorkContext.CurrentSite.BaseUrl);
+    var callbackUrl = new Uri(baseUri, Url.Action("LoggedOn", "Landing", new { area = "Quicklogons", provider = "{provider}", userid = "{userid}", name = "{name}", email = "{email}", timestamp = "{timestamp}", hash = "{hash}", error = "{error}", returnurl = "{returnurl}" })).ToString();
     var hashAlgorithms = new[] { "HMACSHA1", "HMACMD5", "HMACRIPEMD160", "HMACSHA256", "HMACSHA384", "HMACSHA512" }.Select(x => new SelectListItem { Text = x, Value = x, Selected = string.Equals(x, Model.HashAlgorithm, StringComparison.OrdinalIgnoreCase) });
 }
 <fieldset>

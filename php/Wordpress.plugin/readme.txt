@@ -69,3 +69,8 @@ Please contact us by mail support@quicklogons.com and decribe issue. We will do 
 
 = 1.0 =
 * First release
+
+== Upgrade Notice ==
+
+= 1.0 =
+No action required

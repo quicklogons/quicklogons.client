@@ -25,8 +25,9 @@ class LandingParameters
 
     function pre_process($v)
     {
-        if (get_magic_quotes_gpc()) return stripslashes($v);
-        return $v;
+        //if (get_magic_quotes_gpc()) 
+        return stripslashes($v);
+        //return $v;
     }
 }
 

@@ -3,8 +3,8 @@ Contributors: quicklogons
 Donate link: http://www.quicklogons.com
 Tags: security, login with, oauth, social login, google, facebook, linkedin, liveid, paypal, instagram, amazon, 37signals, dropbox, github, reddit, twitter, yandex, vkontakte, mailru
 Requires at least: 3.0.1
-Tested up to: 1.0
-Stable tag: 1.0
+Tested up to: 1.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ Please contact us by mail support@quicklogons.com and decribe issue. We will do 
 3. Logged in user.
 
 == Changelog ==
+
+= 1.1 =
+* Made plugin compatible with WP framework
+* Fixed logout and redirect to custom login page 
 
 = 1.0 =
 * First release

@@ -1,8 +1,8 @@
 <?php
 class Settings
 {
-    static $callback_relative_url = "/wp-content/plugins/quicklogons/loggedin.php?provider={provider}&userid={userid}&name={name}&email={email}&timestamp={timestamp}&hash={hash}&error={error}&returnurl={returnurl}";
-    static $login_relative_url = "/wp-content/plugins/quicklogons/login.php";
+    static $callback_relative_url = "/wp-login.php?provider={provider}&userid={userid}&name={name}&email={email}&timestamp={timestamp}&hash={hash}&error={error}&returnurl={returnurl}";
+    static $login_relative_url = "/wp-login.php?oauth";
 
     public $url = "";
     public $secure_url = "";

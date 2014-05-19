@@ -1,5 +1,3 @@
-<?php $settings = Settings::load(); ?>
-<?php $callback_template = site_url(Settings::$callback_relative_url);?>
 <div class="wrap">
     <h2>Quicklogons Settings</h2>
     <form method="post" action="options.php"> 
